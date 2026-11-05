@@ -2,7 +2,7 @@
 
 **Última actualización:** 5 de noviembre de 2026
 **Ruta del proyecto:** `C:\Users\Alumno\Documents\GitHub\Portafolio_JG.github.io`
-**Estado general:** sitio construido y verificado. Falta confirmar datos y publicar.
+**Estado general:** sitio construido, verificado y subido a `origin/Principal`. Falta activar GitHub Pages y confirmar datos.
 
 ---
 
@@ -44,6 +44,7 @@ Landing page estática para GitHub Pages con el perfil de **James Deyvi Goñe Lo
    - **Scrollspy:** se cambió el cálculo por `getBoundingClientRect()` con un marcador al 28% del viewport. Ahora la sección activa cambia también al entrar por ancla (`#proyectos`, `#contacto`).
    - **Menú móvil:** fondo sólido `var(--bg)` en lugar de translúcido; se eliminó el `backdrop-filter` que dejaba ver el hero detrás.
    - **Limpieza:** se quitaron las clases sin regla CSS `hero__content` y `codecard__meta`.
+5. **Commit y push:** se creó el commit `a34c8f1` ("Portafolio Creado") en la rama `Principal` y se subió a `origin`. La rama `main` conserva el portafolio anterior.
 
 ---
 
@@ -81,7 +82,7 @@ Landing page estática para GitHub Pages con el perfil de **James Deyvi Goñe Lo
   - Menú móvil: `aria-expanded="true"`, panel visible y opaco, sin desborde.
   - Filtros: **6** en Todos, **4** en Completados, **2** en En desarrollo.
 
-> Nota: `git` no está disponible en este entorno, así que no se hicieron commits ni push. La publicación queda para GitHub Desktop.
+> Nota de Git: el commit `a34c8f1` ("Portafolio Creado", 5 nov 2026 15:42) contiene el sitio nuevo y ya está en `origin/Principal`. `main` sigue con el portafolio viejo (`93c45bf`).
 
 ---
 
@@ -113,12 +114,43 @@ Portafolio_JG.github.io/
 1. **URL real de Upwork** (reemplazar el enlace genérico).
 2. **Confirmar estados:** Duelo de Gremios y Aventura Narrativa Histórica.
 3. **Capturas reales** de los proyectos (hoy son placeholders SVG).
-4. **Publicar en GitHub Pages** con GitHub Desktop y comprobar la URL final.
+4. **Activar GitHub Pages** (ver sección 8).
 5. Opcional: revisar textos de cada proyecto para que coincidan exactamente con el portafolio deseado.
+6. Opcional: renombrar el repositorio si se quiere la URL raíz `https://chemslgdesu.github.io/`.
 
 ---
 
-## 8. Cómo previsualizar
+## 8. Publicación en GitHub Pages
+
+**Estado:** Pages está enlazado al repositorio (`pagesUrl`), pero **no hay un despliegue activo**: la URL devuelve 404 ("Site not found"). Lo más probable es que la fuente de Pages no sea la rama `Principal` o que esté configurada como GitHub Actions sin workflow.
+
+**Repositorio:**
+- URL: https://github.com/ChemsLGDesu/Portafolio_JG.github.io
+- Remoto: https://github.com/ChemsLGDesu/Portafolio_JG.github.io.git
+- Es un **fork** de `KurusuDes/KurusuDes.github.io`; `main` conserva el portafolio viejo de Juan Neyra.
+- Rama con el sitio nuevo: `Principal` (commit `a34c8f1`, ya subido).
+- Rama por defecto: `main` (portafolio viejo, `93c45bf`).
+- `.nojekyll` está versionado y todas las rutas de assets son relativas, así que funcionan bajo el subdirectorio del proyecto.
+
+**URL que tendrá:** https://chemslgdesu.github.io/Portafolio_JG.github.io/ (la misma que ya muestra el repositorio).
+
+No se usa `/#/`: es una página estática sin router. Los enlaces internos son anclas normales (`#proyectos`, `#contacto`).
+
+**Pasos para activarlo:**
+1. Abrir https://github.com/ChemsLGDesu/Portafolio_JG.github.io/settings/pages
+2. En "Build and deployment" → Source: **Deploy from a branch** (si está en "GitHub Actions", cambiarlo).
+3. Branch: **`Principal`**; carpeta: **`/ (root)`** → **Save**.
+4. Esperar 1–2 minutos. La URL aparecerá en esa misma pantalla y se puede seguir el build en la sección de Pages.
+5. Opcional: en Settings → General, cambiar la rama por defecto a `Principal` para que el repositorio muestre el sitio nuevo.
+6. Opcional: en la página principal del repo, editar "Website" (hoy apunta a `https://kurusudes.github.io`) y poner la URL nueva.
+
+**Si sigue en 404 después de guardar:** revisar que la rama elegida sea `Principal` y que el build de Pages haya terminado sin errores. Si el fork da problemas, la alternativa es crear un repositorio nuevo (no fork) y subir ahí el contenido de `Principal`.
+
+**Nota:** para tener la URL raíz `https://chemslgdesu.github.io/` (sin el nombre del repo) habría que renombrar el repositorio a `chemslgdesu.github.io` o crear un repo de usuario con ese nombre.
+
+---
+
+## 9. Cómo previsualizar
 
 Servidor local (Python de Inkscape):
 
@@ -138,7 +170,7 @@ node --check js/script.js
 
 ---
 
-## 9. Para la próxima sesión
+## 10. Para la próxima sesión
 
 1. Leer esta bitácora antes de tocar código.
 2. Revisar la lista de pendientes de la sección 7.
