@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James Goñe · Game Developer, C# & UI Designer</title>
+<meta name="description" content="Portafolio de James Deyvi Goñe Lozano: Game Developer y programador C# especializado en arquitecturas escalables, Game Design y UI en Unity.">
+<meta name="author" content="James Deyvi Goñe Lozano">
+<meta property="og:title" content="James Goñe · Game Developer">
+<meta property="og:description" content="Programando sistemas escalables y diseñando experiencias interactivas.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#080B11">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="site-header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#inicio" aria-label="James Goñe, inicio">
+      <span class="brand__mark" aria-hidden="true">JG</span>
+      <span class="brand__text">
+        <strong>James Goñe</strong>
+        <small>Game Developer</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <ul class="nav__list">
+        <li><a class="nav__link is-active" href="#inicio">Inicio</a></li>
+        <li><a class="nav__link" href="#habilidades">Habilidades</a></li>
+        <li><a class="nav__link" href="#proyectos">Proyectos</a></li>
+        <li><a class="nav__link" href="#contacto">Contacto</a></li>
+      </ul>
+      <a class="btn btn--sm btn--ghost nav__cta" href="https://github.com/ChemsLGDesu" target="_blank" rel="noopener noreferrer">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div>
+        <p class="eyebrow reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          Disponible para proyectos
+        </p>
+
+        <h1 class="hero__title reveal">
+          Programando <span class="accent">sistemas escalables</span> y diseñando experiencias interactivas.
+        </h1>
+
+        <p class="hero__lead reveal">
+          Game Developer especializado en <strong>C#</strong>, patrones de diseño en Unity y Game Design.
+          Construyo código versátil, arquitecturas que crecen e interfaces que se entienden sin manual.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a class="btn btn--primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--ghost" href="#contacto">Contactar</a>
+        </div>
+
+        <ul class="hero__stack reveal" aria-label="Tecnologías principales">
+          <li>C#</li>
+          <li>Unity</li>
+          <li>Unreal Engine 5</li>
+          <li>UI Toolkit</li>
+          <li>UGS</li>
+        </ul>
+      </div>
+
+      <div class="hero__panel reveal">
+        <div class="codecard">
+          <div class="codecard__bar">
+            <span class="codecard__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="codecard__file">PlayerState.cs</span>
+            <span class="codecard__tab">C#</span>
+          </div>
+          <pre class="code" aria-label="Fragmento de código C#"><code><span class="tok-key">public class</span> <span class="tok-type">PlayerState</span> : <span class="tok-type">MonoBehaviour</span>
+{
+    <span class="tok-attr">[SerializeField]</span> <span class="tok-key">private</span> <span class="tok-type">StateMachine</span> _fsm;
+
+    <span class="tok-key">void</span> <span class="tok-fn">Awake</span>() =&gt; _fsm = <span class="tok-key">new</span> <span class="tok-type">StateMachine</span>(
+        <span class="tok-key">new</span> <span class="tok-type">IdleState</span>(<span class="tok-key">this</span>),
+        <span class="tok-key">new</span> <span class="tok-type">MoveState</span>(<span class="tok-key">this</span>),
+        <span class="tok-key">new</span> <span class="tok-type">DashState</span>(<span class="tok-key">this</span>));
+
+    <span class="tok-key">void</span> <span class="tok-fn">Update</span>() =&gt; _fsm.<span class="tok-fn">Tick</span>(Time.deltaTime);
+}</code></pre>
+          <div class="codecard__footer">
+            <span class="codecard__status"><i aria-hidden="true"></i> compilado</span>
+            <span>arquitectura · fsm modular</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <div class="ticker__group">
+        <span>C#</span><i>◆</i><span>Unity</span><i>◆</i><span>Unreal Engine 5</span><i>◆</i><span>Patrones de diseño</span><i>◆</i><span>UI Toolkit</span><i>◆</i><span>UGS</span><i>◆</i><span>Game Design</span><i>◆</i><span>OpenGL</span><i>◆</i>
+      </div>
+      <div class="ticker__group">
+        <span>C#</span><i>◆</i><span>Unity</span><i>◆</i><span>Unreal Engine 5</span><i>◆</i><span>Patrones de diseño</span><i>◆</i><span>UI Toolkit</span><i>◆</i><span>UGS</span><i>◆</i><span>Game Design</span><i>◆</i><span>OpenGL</span><i>◆</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ HABILIDADES ═══════════════════ -->
+  <section class="section" id="habilidades">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow reveal">01 — Stack</p>
+        <h2 class="section__title reveal">Habilidades</h2>
+        <p class="section__lead reveal">
+          Fundamentos de ingeniería aplicados al juego: código que se puede leer, cambiar y escalar,
+          sobre motores y herramientas que uso todos los días.
+        </p>
+      </header>
+
+      <div class="skills">
+        <article class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="skill-card__index">01</span>
+            <span class="skill-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5"/><path d="m16 7 5 5-5 5"/></svg>
+            </span>
+          </div>
+          <h3>Programación y Arquitectura</h3>
+          <p>Patrones de diseño, estructuras de datos eficientes y bases modulares que aceptan cambios sin romperse.</p>
+          <ul class="tags">
+            <li>C#</li>
+            <li>Patrones de diseño</li>
+            <li>MCP en Unity</li>
+            <li>Estructuras de datos</li>
+            <li>C++</li>
+            <li>OpenGL / FreeGLUT</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="skill-card__index">02</span>
+            <span class="skill-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5"/><path d="M12 13v8"/></svg>
+            </span>
+          </div>
+          <h3>Motores y Herramientas</h3>
+          <p>Dominio del motor y un flujo de trabajo diario apoyado en agentes de IA para iterar más rápido sin perder control.</p>
+          <ul class="tags">
+            <li>Unity</li>
+            <li>Unreal Engine 5</li>
+            <li>Opencode</li>
+            <li>Agentes de IA</li>
+            <li>Git</li>
+            <li>GitHub Desktop</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <div class="skill-card__top">
+            <span class="skill-card__index">03</span>
+            <span class="skill-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+            </span>
+          </div>
+          <h3>Especialidades</h3>
+          <p>Diseño de mecánicas e interfaces: sistemas legibles, feedback claro y servicios en la nube bien integrados.</p>
+          <ul class="tags">
+            <li>Game Design</li>
+            <li>UI/UX</li>
+            <li>Unity UI Toolkit</li>
+            <li>Unity Gaming Services (UGS)</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="principles reveal">
+        <div class="principle">
+          <span class="principle__icon" aria-hidden="true">↗</span>
+          <div><b>Arquitectura escalable</b><span>Sistemas que crecen sin reescribir el proyecto.</span></div>
+        </div>
+        <div class="principle">
+          <span class="principle__icon" aria-hidden="true">◇</span>
+          <div><b>Datos eficientes</b><span>La estructura correcta antes que la optimización tardía.</span></div>
+        </div>
+        <div class="principle">
+          <span class="principle__icon" aria-hidden="true">✦</span>
+          <div><b>Interfaces limpias</b><span>Menos fricción para el jugador, más claridad para el equipo.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROYECTOS ═══════════════════ -->
+  <section class="section" id="proyectos">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow reveal">02 — Trabajo</p>
+        <h2 class="section__title reveal">Proyectos</h2>
+        <p class="section__lead reveal">
+          Juegos y sistemas en los que he trabajado como programador, diseñador de juego y de interfaz.
+        </p>
+      </header>
+
+      <div class="filters reveal" role="group" aria-label="Filtrar proyectos por estado">
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+        <button class="filter" type="button" data-filter="done" aria-pressed="false">Completados</button>
+        <button class="filter" type="button" data-filter="wip" aria-pressed="false">En desarrollo</button>
+      </div>
+
+      <div class="projects" id="projects">
+
+        <!-- Reemplaza img/projects/placeholder.svg por la captura o GIF de cada proyecto -->
+        <article class="project reveal" data-status="done" style="--pa:#FF7AA2">
+          <div class="project__media">
+            <img src="img/projects/placeholder.svg" alt="Portada de The Angel of The Road" width="1200" height="675" loading="lazy">
+            <span class="project__art-num" aria-hidden="true">01</span>
+            <span class="project__badge project__badge--done">Completado</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="project__role">Game Designer &amp; UI Designer</span>
+            </div>
+            <h3 class="project__title">The Angel of The Road</h3>
+            <p class="project__text">Diseño de juego e interfaz: definición de mecánicas, flujo de pantallas y una UI coherente con la narrativa del proyecto.</p>
+            <ul class="tags tags--sm">
+              <li>Game Design</li><li>UI Design</li><li>Unity</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn btn--sm btn--primary" href="https://github.com/ChemsLGDesu/TheAngelOfTheRoad" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-status="done" style="--pa:#56C8F0">
+          <div class="project__media">
+            <img src="img/projects/placeholder.svg" alt="Portada de Naval Warfare" width="1200" height="675" loading="lazy">
+            <span class="project__art-num" aria-hidden="true">02</span>
+            <span class="project__badge project__badge--done">Completado</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="project__role">Programador &amp; Game Developer</span>
+            </div>
+            <h3 class="project__title">Naval Warfare</h3>
+            <p class="project__text">Programación y desarrollo del juego: lógica jugable y sistemas construidos en Unity con C#.</p>
+            <ul class="tags tags--sm">
+              <li>Unity</li><li>C#</li><li>Gameplay</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn btn--sm btn--primary" href="https://github.com/Diego27SEN/NavalWarfare-PFINAL3CICLO-JDF" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-status="wip" style="--pa:#A78BFA">
+          <div class="project__media">
+            <img src="img/projects/placeholder.svg" alt="Portada de RhythmPath" width="1200" height="675" loading="lazy">
+            <span class="project__art-num" aria-hidden="true">03</span>
+            <span class="project__badge project__badge--wip">En desarrollo</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="project__role">Creador</span>
+            </div>
+            <h3 class="project__title">RhythmPath</h3>
+            <p class="project__text">Videojuego de ritmo musical actualmente en producción. Diseño y programación de los sistemas de juego.</p>
+            <ul class="tags tags--sm">
+              <li>Unity</li><li>C#</li><li>Game Design</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn btn--sm btn--primary" href="https://github.com/ChemsLGDesu/RhythmPath" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-status="done" style="--pa:#F6B85A">
+          <div class="project__media">
+            <img src="img/projects/placeholder.svg" alt="Portada de Operación Éxodo" width="1200" height="675" loading="lazy">
+            <span class="project__art-num" aria-hidden="true">04</span>
+            <span class="project__badge project__badge--done">Completado</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="project__role">Contribuidor / Game Developer</span>
+            </div>
+            <h3 class="project__title">Operación Éxodo</h3>
+            <p class="project__text">Contribución como Game Developer: implementación de sistemas y soporte al equipo de desarrollo.</p>
+            <ul class="tags tags--sm">
+              <li>Unity</li><li>C#</li><li>Gameplay</li>
+            </ul>
+            <div class="project__actions">
+              <a class="btn btn--sm btn--primary" href="https://github.com/Diego27SEN/OPERACIONEXODO" target="_blank" rel="noopener noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-status="wip" style="--pa:#6EE7A8">
+          <div class="project__media">
+            <img src="img/projects/placeholder.svg" alt="Portada de Duelo de Gremios" width="1200" height="675" loading="lazy">
+            <span class="project__art-num" aria-hidden="true">05</span>
+            <span class="project__badge project__badge--wip">En desarrollo</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="project__role">Creador</span>
+            </div>
+            <h3 class="project__title">Duelo de Gremios</h3>
+            <p class="project__text">RPG táctico 2D asíncrono. Arquitectura en Unity con servicios en la nube para guardado, emparejamiento e interfaz.</p>
+            <ul class="tags tags--sm">
+              <li>Unity</li><li>C#</li><li>UGS</li><li>Cloud Save</li><li>Matchmaker</li><li>UI Toolkit</li>
+            </ul>
+            <div class="project__actions">
+              <span class="private"><span aria-hidden="true">▣</span> Código privado</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-status="done" style="--pa:#F87171">
+          <div class="project__media">
+            <img src="img/projects/placeholder.svg" alt="Portada de Aventura Narrativa Histórica" width="1200" height="675" loading="lazy">
+            <span class="project__art-num" aria-hidden="true">06</span>
+            <span class="project__badge project__badge--done">Completado</span>
+          </div>
+          <div class="project__body">
+            <div class="project__meta">
+              <span class="project__role">Game Designer &amp; UI Developer</span>
+            </div>
+            <h3 class="project__title">Aventura Narrativa Histórica</h3>
+            <p class="project__text">Guerra del Pacífico. Sistemas de árboles de decisión mediante ScriptableObjects y una interfaz construida con UI Toolkit.</p>
+            <ul class="tags tags--sm">
+              <li>Unity</li><li>C#</li><li>ScriptableObjects</li><li>UI Toolkit</li>
+            </ul>
+            <div class="project__actions">
+              <span class="private"><span aria-hidden="true">▣</span> Código privado</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACTO ═══════════════════ -->
+  <section class="section section--contact" id="contacto">
+    <div class="container">
+      <div class="contact reveal">
+        <div class="contact__main">
+          <p class="eyebrow">03 — Contacto</p>
+          <h2 class="contact__title">Hablemos de tu <span class="accent">próximo proyecto</span>.</h2>
+          <p class="contact__text">
+            ¿Un juego, un sistema o una interfaz que necesita orden? Escríbeme y te respondo
+            con una propuesta clara: alcance, decisiones técnicas y siguientes pasos.
+          </p>
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="mailto:jamesgonelozano@gmail.com">Enviar correo <span aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost" href="https://github.com/ChemsLGDesu" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost" href="https://www.upwork.com/" target="_blank" rel="noopener noreferrer">Upwork <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <dl class="contact__list">
+          <div class="contact__row">
+            <dt>Email</dt>
+            <dd><a href="mailto:jamesgonelozano@gmail.com">jamesgonelozano@gmail.com</a></dd>
+          </div>
+          <div class="contact__row">
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/ChemsLGDesu" target="_blank" rel="noopener noreferrer">github.com/ChemsLGDesu</a></dd>
+          </div>
+          <div class="contact__row">
+            <dt>Upwork</dt>
+            <dd><a href="https://www.upwork.com/" target="_blank" rel="noopener noreferrer">Perfil de Upwork</a></dd>
+          </div>
+          <div class="contact__row">
+            <dt>Enfoque</dt>
+            <dd>Game Development · C# · Unity · UI/UX</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <a class="brand brand--footer" href="#inicio" aria-label="Volver al inicio">
+      <span class="brand__mark" aria-hidden="true">JG</span>
+      <span class="brand__text">
+        <strong>James Goñe</strong>
+        <small>Game Developer</small>
+      </span>
+    </a>
+
+    <nav class="footer__nav" aria-label="Navegación del pie">
+      <a href="#inicio">Inicio</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <p class="footer__copy">© <span id="year">2026</span> James Deyvi Goñe Lozano · Hecho a mano con HTML, CSS y JS.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
