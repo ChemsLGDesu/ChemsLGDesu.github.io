@@ -2,7 +2,7 @@
 
 **Última actualización:** 5 de noviembre de 2026
 **Ruta del proyecto:** `C:\Users\Alumno\Documents\GitHub\Portafolio_JG.github.io`
-**Estado general:** sitio construido, verificado y subido a `origin/Principal`. Falta activar GitHub Pages y confirmar datos.
+**Estado general:** sitio construido, verificado y subido a `origin/Principal`. Falta desplegar con GitHub Actions y confirmar datos.
 
 ---
 
@@ -114,39 +114,36 @@ Portafolio_JG.github.io/
 1. **URL real de Upwork** (reemplazar el enlace genérico).
 2. **Confirmar estados:** Duelo de Gremios y Aventura Narrativa Histórica.
 3. **Capturas reales** de los proyectos (hoy son placeholders SVG).
-4. **Activar GitHub Pages** (ver sección 8).
+4. **Commitear el workflow y desplegar con GitHub Actions** (ver sección 8).
 5. Opcional: revisar textos de cada proyecto para que coincidan exactamente con el portafolio deseado.
-6. Opcional: renombrar el repositorio si se quiere la URL raíz `https://chemslgdesu.github.io/`.
 
 ---
 
 ## 8. Publicación en GitHub Pages
 
-**Estado:** Pages está enlazado al repositorio (`pagesUrl`), pero **no hay un despliegue activo**: la URL devuelve 404 ("Site not found"). Lo más probable es que la fuente de Pages no sea la rama `Principal` o que esté configurada como GitHub Actions sin workflow.
+**Estado:** el repositorio ya se llama `ChemsLGDesu.github.io` (sitio de usuario, URL raíz) y Pages está enlazado, pero aún **no hay un despliegue activo**: la URL devuelve 404. Se agregó el workflow `.github/workflows/deploy.yml` para desplegar con GitHub Actions.
 
 **Repositorio:**
-- URL: https://github.com/ChemsLGDesu/Portafolio_JG.github.io
-- Remoto: https://github.com/ChemsLGDesu/Portafolio_JG.github.io.git
+- URL: https://github.com/ChemsLGDesu/ChemsLGDesu.github.io
+- Remoto: https://github.com/ChemsLGDesu/ChemsLGDesu.github.io.git
 - Es un **fork** de `KurusuDes/KurusuDes.github.io`; `main` conserva el portafolio viejo de Juan Neyra.
-- Rama con el sitio nuevo: `Principal` (commit `a34c8f1`, ya subido).
+- Rama con el sitio nuevo: `Principal` (commit `06cb646`, ya subido).
 - Rama por defecto: `main` (portafolio viejo, `93c45bf`).
-- `.nojekyll` está versionado y todas las rutas de assets son relativas, así que funcionan bajo el subdirectorio del proyecto.
+- Workflow nuevo: `.github/workflows/deploy.yml` (se dispara en `main` y con `workflow_dispatch`).
 
-**URL que tendrá:** https://chemslgdesu.github.io/Portafolio_JG.github.io/ (la misma que ya muestra el repositorio).
+**URL final:** https://chemslgdesu.github.io/ (sitio de usuario, sin subcarpeta).
 
 No se usa `/#/`: es una página estática sin router. Los enlaces internos son anclas normales (`#proyectos`, `#contacto`).
 
-**Pasos para activarlo:**
-1. Abrir https://github.com/ChemsLGDesu/Portafolio_JG.github.io/settings/pages
-2. En "Build and deployment" → Source: **Deploy from a branch** (si está en "GitHub Actions", cambiarlo).
-3. Branch: **`Principal`**; carpeta: **`/ (root)`** → **Save**.
-4. Esperar 1–2 minutos. La URL aparecerá en esa misma pantalla y se puede seguir el build en la sección de Pages.
-5. Opcional: en Settings → General, cambiar la rama por defecto a `Principal` para que el repositorio muestre el sitio nuevo.
-6. Opcional: en la página principal del repo, editar "Website" (hoy apunta a `https://kurusudes.github.io`) y poner la URL nueva.
+**Pasos:**
+1. Commitear el workflow y llevar `Principal` a `main` (merge fast-forward) o cambiar el trigger del workflow a `Principal`. **Ojo:** `main` todavía tiene el portafolio viejo.
+2. Abrir https://github.com/ChemsLGDesu/ChemsLGDesu.github.io/settings/pages
+3. En "Build and deployment" → Source: **GitHub Actions** (no "Deploy from a branch").
+4. En la pestaña **Actions**, si aparece el aviso de fork, habilitar los workflows ("I understand my workflows, go ahead and enable them").
+5. Entrar a "Deploy static site to GitHub Pages" → **Run workflow** (o hacer push a `main`).
+6. Esperar los jobs `build` y `deploy`; la URL se publica en el entorno `github-pages`.
 
-**Si sigue en 404 después de guardar:** revisar que la rama elegida sea `Principal` y que el build de Pages haya terminado sin errores. Si el fork da problemas, la alternativa es crear un repositorio nuevo (no fork) y subir ahí el contenido de `Principal`.
-
-**Nota:** para tener la URL raíz `https://chemslgdesu.github.io/` (sin el nombre del repo) habría que renombrar el repositorio a `chemslgdesu.github.io` o crear un repo de usuario con ese nombre.
+**Si falla:** revisar los logs del workflow, que `main` tenga el contenido nuevo y que Pages esté en Source = GitHub Actions. Si el fork impide publicar, crear un repositorio nuevo (no fork) con el contenido de `Principal`.
 
 ---
 
